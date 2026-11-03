@@ -1,0 +1,30 @@
+{
+  "name": "claude-code-skills-library-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Central curated library of specialized AI skills for Claude Code",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/web",
+    "build": "npm run build --workspace=packages/skill-core && npm run build --workspace=apps/web",
+    "build:core": "npm run build --workspace=packages/skill-core",
+    "build:web": "npm run build --workspace=apps/web",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "sync-skills": "node packages/skill-core/scripts/sync-skills.cjs"
+  },
+  "keywords": [
+    "claude-code",
+    "skills",
+    "ai-skills",
+    "developer-tools",
+    "agentic-coding"
+  ],
+  "author": "Claude Code Skills Library Team",
+  "license": "MIT"
+}
+
